@@ -18,4 +18,18 @@ public class Mail {
         return id;
     }
     
+
+    public Mail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getMail() {
+        return mail;
+    }  
+    
+    public String getDomain(){
+        String[] dom = mail.split("@");
+        return dom[1];
+    }
+
 }

@@ -59,4 +59,26 @@ public class Kata4 {
         histoDisplay.execute();
     }
 
+    private Histogram<String> histogram;
+    private static HistogramDisplay histoDisplay;
+        
+    private void execute() throws Exception{
+        input();
+        process();
+        output();
+    }
+    
+    private void input() throws IOException{
+        filename = "/Users/DaniMangtani/NetBeansProjects/Kata4/emails.txt";
+        mailList = MailListReader.read(filename);
+    }
+    
+    private void process() throws Exception{
+        histogram = MailHistogramBuilder.build(mailList);
+    }
+    
+    private void output(){
+        histoDisplay = new HistogramDisplay(histogram);
+        histoDisplay.execute();
+    }
 }

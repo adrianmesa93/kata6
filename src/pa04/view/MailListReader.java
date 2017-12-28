@@ -18,6 +18,11 @@ public class MailListReader {
         while ((mail = reader.readLine()) != null){
             if (mail.contains("@")){
                 mailList.add(new Mail(mail, id)); 
+        BufferedReader reader = new BufferedReader(new FileReader(new File(fileName))); 
+        String mail;
+        while ((mail = reader.readLine()) != null){
+            if (mail.contains("@")){
+                mailList.add(new Mail(mail)); 
             }
         }
         reader.close();
